@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>College Practical Front Page Generator | MMC Fatehabad</title>
+  <meta name="description"
+    content="Generate 100% exact, print-ready college practical file front pages for Data Mining, Computer Graphics, Linux and more.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=3.4">
+</head>
+
+<body>
+  <div class="app-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-brand">
+        <div class="brand-badge-logo">📑</div>
+        <div>
+          <h1>Practical Front Page Generator</h1>
+          <span class="subtitle">Made By S.N.M.</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Tab Switcher -->
+    <div class="mobile-tabs">
+      <button id="tab-btn-form" class="mobile-tab-btn active">✏️ Edit Details</button>
+      <button id="tab-btn-preview" class="mobile-tab-btn">👁️ View Front Page</button>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+      <!-- Left Sidebar: Controls & Inputs -->
+      <aside class="sidebar">
+
+        <!-- 1. Quick Subject Presets -->
+        <div class="form-group">
+          <div class="section-title">⚡ Quick Subject Presets</div>
+          <div class="preset-grid">
+            <button type="button" class="preset-btn active" data-preset="data-mining">
+              <span class="preset-title">📊 Data Mining</span>
+              <span class="preset-teacher">Mrs. Nitu Jain</span>
+            </button>
+            <button type="button" class="preset-btn" data-preset="computer-graphics">
+              <span class="preset-title">🎨 Comp. Graphics</span>
+              <span class="preset-teacher">Mrs. Priyanka Beniwal</span>
+            </button>
+            <button type="button" class="preset-btn" data-preset="linux">
+              <span class="preset-title">🐧 Linux OS</span>
+              <span class="preset-teacher">Mrs. Nitu Jain</span>
+            </button>
+            <button type="button" class="preset-btn" data-preset="custom">
+              <span class="preset-title">⚙️ Custom Subject</span>
+              <span class="preset-teacher">Type any subject</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Subject & Title Information -->
+        <div class="form-card">
+          <div class="section-title">📖 Practical / Subject Info</div>
+
+          <div class="form-group">
+            <label for="input-subject">
+              Subject Name
+              <span class="label-hint">Auto-sets teacher</span>
+            </label>
+            <input type="text" id="input-subject" class="form-control" value="DATA MINING"
+              placeholder="e.g. DATA MINING, LINUX, COMPUTER GRAPHICS">
+          </div>
+
+          <div class="form-group">
+            <label for="input-file-prefix">Title Prefix</label>
+            <input type="text" id="input-file-prefix" class="form-control" value="PRACTICAL FILE OF"
+              placeholder="PRACTICAL FILE OF / PROJECT REPORT ON">
+          </div>
+        </div>
+
+        <!-- 3. Teacher Information (SUBMITTED TO) -->
+        <div class="form-card">
+          <div class="section-title">👨‍🏫 Teacher Details (Submitted To)</div>
+
+          <div class="form-group">
+            <label for="input-teacher">Teacher Name</label>
+            <input type="text" id="input-teacher" class="form-control" value="Mrs. Nitu Jain"
+              placeholder="e.g. Mrs. Nitu Jain">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-designation">Designation</label>
+              <input type="text" id="input-designation" class="form-control" value="(Assistant Professor)">
+            </div>
+            <div class="form-group">
+              <label for="input-department">Department</label>
+              <input type="text" id="input-department" class="form-control" value="Dept. of Computer Science">
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Student Information (SUBMITTED BY) -->
+        <div class="form-card">
+          <div class="section-title">🎓 Student Details (Submitted By)</div>
+
+          <div class="form-group">
+            <label for="input-student-name">Student Full Name</label>
+            <input type="text" id="input-student-name" class="form-control" value="SΛNΛM" placeholder="Your Name">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-student-class">Class</label>
+              <input type="text" id="input-student-class" class="form-control" value="BCA III" placeholder="BCA III">
+              <div class="pill-container">
+                <button type="button" class="pill-btn active" data-target="studentClass" data-value="BCA III">BCA
+                  III</button>
+                <button type="button" class="pill-btn" data-target="studentClass" data-value="BCA II">BCA II</button>
+                <button type="button" class="pill-btn" data-target="studentClass" data-value="BCA I">BCA I</button>
+                <button type="button" class="pill-btn" data-target="studentClass" data-value="MCA">MCA</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="input-student-sem">Semester</label>
+              <input type="text" id="input-student-sem" class="form-control" value="5th" placeholder="5th">
+              <div class="pill-container">
+                <button type="button" class="pill-btn active" data-target="studentSem" data-value="5th">5th</button>
+                <button type="button" class="pill-btn" data-target="studentSem" data-value="6th">6th</button>
+                <button type="button" class="pill-btn" data-target="studentSem" data-value="3rd">3rd</button>
+                <button type="button" class="pill-btn" data-target="studentSem" data-value="1st">1st</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-student-roll">University Roll No</label>
+            <input type="text" id="input-student-roll" class="form-control" value="1242316061"
+              placeholder="e.g. 1242316061">
+          </div>
+        </div>
+
+        <!-- 5. Line Spacing Adjustment (Desktop Only) -->
+        <div class="form-card desktop-only" id="line-spacing-card">
+          <div class="section-title">
+            <span class="title-with-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="3" x2="12" y2="21"></line>
+                <polyline points="8 7 12 3 16 7"></polyline>
+                <polyline points="8 17 12 21 16 17"></polyline>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+              </svg>
+              Line Spacing Controls
+            </span>
+            <span class="badge-desktop-tag">Desktop</span>
+          </div>
+
+          <!-- Title Gap -->
+          <div class="spacing-control-group">
+            <div class="spacing-header">
+              <label for="slider-title-gap">Title &amp; Subject Gap</label>
+              <div class="spacing-stepper">
+                <button type="button" class="btn-micro-step" id="btn-dec-title" title="Decrease gap">−</button>
+                <span id="val-title-gap" class="spacing-val-badge">2.0 mm</span>
+                <button type="button" class="btn-micro-step" id="btn-inc-title" title="Increase gap">+</button>
+              </div>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" id="slider-title-gap" min="0" max="12" step="0.2" value="2.0" class="range-slider">
+            </div>
+          </div>
+
+          <!-- Details Spacing -->
+          <div class="spacing-control-group" style="margin-top: 14px;">
+            <div class="spacing-header">
+              <label for="slider-details-gap">Bottom Details Spacing</label>
+              <div class="spacing-stepper">
+                <button type="button" class="btn-micro-step" id="btn-dec-details" title="Decrease spacing">−</button>
+                <span id="val-details-gap" class="spacing-val-badge">2.0 mm</span>
+                <button type="button" class="btn-micro-step" id="btn-inc-details" title="Increase spacing">+</button>
+              </div>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" id="slider-details-gap" min="0.5" max="5.0" step="0.1" value="2.0"
+                class="range-slider">
+            </div>
+          </div>
+
+          <!-- Segmented Quick Presets -->
+          <div class="segmented-control" style="margin-top: 14px;">
+            <button type="button" id="btn-spacing-compact" class="segment-btn">Compact</button>
+            <button type="button" id="btn-spacing-default" class="segment-btn active">Default (Exact)</button>
+            <button type="button" id="btn-spacing-relaxed" class="segment-btn">Relaxed</button>
+          </div>
+        </div>
+
+        <!-- 6. College Branding (Collapsible) -->
+        <div class="accordion">
+          <div class="accordion-header">
+            <h3>🏛️ College Branding & Logo</h3>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="form-group">
+              <label for="input-college-name">College Name</label>
+              <input type="text" id="input-college-name" class="form-control" value="MANOHAR MEMORIAL COLLEGE">
+            </div>
+            <div class="form-group">
+              <label for="input-college-city">City / Location</label>
+              <input type="text" id="input-college-city" class="form-control" value="FATEHABAD">
+            </div>
+            <div class="form-group">
+              <label for="input-logo-file">Custom Logo Image (Optional)</label>
+              <input type="file" id="input-logo-file" class="form-control" accept="image/*">
+              <button type="button" id="btn-reset-logo" class="btn-secondary" style="margin-top: 6px;">🔄 Restore MMC
+                Official Logo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Generated Filename Indicator -->
+        <div class="filename-preview-box">
+          <span class="filename-icon">📁</span>
+          <div>
+            <div style="font-size: 11px; color: #94a3b8; font-weight: 500;">Download File Name:</div>
+            <div id="filename-display" class="filename-text">Data-Mining-front-page-SΛNΛM.pdf</div>
+          </div>
+        </div>
+
+        <!-- 8. Action Buttons -->
+        <div class="action-buttons">
+          <button type="button" id="btn-download-pdf" class="btn-primary">
+            <span>📄</span>
+            <span>Download PDF (A4 Print-Ready)</span>
+          </button>
+          <div class="btn-row">
+            <button type="button" id="btn-download-png" class="btn-secondary">
+              <span>🖼️</span>
+              <span>Download PNG</span>
+            </button>
+            <button type="button" id="btn-print" class="btn-secondary">
+              <span>🖨️</span>
+              <span>Print / Save</span>
+            </button>
+          </div>
+          <button type="button" id="btn-copy-img" class="btn-secondary">
+            <span>📋</span>
+            <span>Copy Image to Clipboard</span>
+          </button>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="reset-wrapper">
+          <button type="button" id="btn-reset" class="btn-link">Reset all fields to sample defaults</button>
+        </div>
+
+      </aside>
+
+      <!-- Right Panel: Live A4 Real-Time Preview -->
+      <section class="preview-panel hidden-mobile">
+
+        <!-- Preview Toolbar -->
+        <div class="preview-toolbar">
+          <div class="toolbar-left">
+            <span class="preview-title">
+              <span class="live-indicator"></span>
+              Live A4 Preview (Exact Dimensions)
+            </span>
+          </div>
+          <div class="toolbar-controls">
+            <button type="button" id="btn-zoom-out" class="tool-btn" title="Zoom Out">−</button>
+            <span id="zoom-text" class="zoom-text">85%</span>
+            <button type="button" id="btn-zoom-in" class="tool-btn" title="Zoom In">+</button>
+            <button type="button" id="btn-zoom-fit" class="tool-btn" title="Fit to Screen"
+              style="width: auto; padding: 0 8px;">Fit</button>
+            <button type="button" id="btn-zoom-100" class="tool-btn" title="100% Size"
+              style="width: auto; padding: 0 8px;">1:1</button>
+          </div>
+        </div>
+
+        <!-- Preview Scroll Area -->
+        <div class="preview-scroll-area">
+          <div id="paper-scaler" class="paper-scaler">
+
+            <!-- Exact A4 Sheet: 210mm x 297mm -->
+            <div id="paper-page" class="a4-page">
+              <div class="page-border">
+
+                <!-- College Name -->
+                <div id="preview-college-name" class="page-college-name">MANOHAR MEMORIAL COLLEGE</div>
+
+                <!-- College City -->
+                <div id="preview-college-city" class="page-college-city">FATEHABAD</div>
+
+                <!-- College Logo + Estd 1970 -->
+                <div class="page-logo-wrapper">
+                  <img id="preview-logo" class="page-logo-img" src="assets/logo.png" alt="College Logo">
+                </div>
+
+                <!-- Practical File Title -->
+                <div class="page-title-block">
+                  <div id="preview-file-prefix" class="page-file-prefix">PRACTICAL FILE OF</div>
+                  <div id="preview-subject" class="page-subject-name">DATA MINING</div>
+                </div>
+
+                <!-- Bottom Two Columns -->
+                <!-- Submitted To -->
+                <div class="page-sub-col page-submitted-to">
+                  <div class="page-sub-heading">SUBMITTED TO:</div>
+                  <div id="preview-teacher" class="page-text-line">Mrs. Nitu Jain</div>
+                  <div id="preview-designation" class="page-text-line">(Assistant Professor)</div>
+                  <div id="preview-department" class="page-text-line">Dept. of Computer Science</div>
+                </div>
+
+                <!-- Submitted By -->
+                <div class="page-sub-col page-submitted-by">
+                  <div class="page-sub-heading">SUBMITTED BY:</div>
+                  <div class="page-text-line">
+                    <span class="page-data-label">NAME:&nbsp;</span>
+                    <span id="preview-student-name" class="page-data-val">SΛNΛM</span>
+                  </div>
+                  <div class="page-text-line">
+                    <span class="page-data-label">CLASS:&nbsp;</span>
+                    <span id="preview-student-class" class="page-data-val">BCA III</span>
+                  </div>
+                  <div class="page-text-line">
+                    <span class="page-data-label">SEM:</span>
+                    <span id="preview-student-sem" class="page-data-val">5th</span>
+                  </div>
+                  <div class="page-text-line">
+                    <span class="page-data-label">ROLL NO:&nbsp;</span>
+                    <span id="preview-student-roll" class="page-data-val">24030115470053</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="logo-data.js?v=3.4"></script>
+  <script src="libs/jspdf.umd.min.js"></script>
+  <script src="libs/html2canvas.min.js"></script>
+  <script src="app.js?v=3.4"></script>
+</body>
+
+</html>
