@@ -43,7 +43,7 @@
     studentName: 'SΛNΛM',
     studentClass: 'BCA III',
     studentSem: '5th',
-    studentRoll: '24030115470053',
+    studentRoll: '1242316061',
     currentPreset: 'data-mining',
     zoomLevel: 0.58,
     customLogoUrl: null,
@@ -141,10 +141,10 @@
           state.studentName = 'SΛNΛM';
         }
 
-        if (parsed.studentRoll && parsed.studentRoll !== '24030115470043') {
+        if (parsed.studentRoll && parsed.studentRoll !== '24030115470043' && parsed.studentRoll !== '24030115470053') {
           state.studentRoll = parsed.studentRoll;
         } else {
-          state.studentRoll = '24030115470053';
+          state.studentRoll = '1242316061';
         }
 
         if (parsed.studentClass) state.studentClass = parsed.studentClass;
@@ -160,13 +160,13 @@
         if (typeof parsed.detailsSpacing === 'number') state.detailsSpacing = parsed.detailsSpacing;
       } else {
         state.studentName = 'SΛNΛM';
-        state.studentRoll = '24030115470053';
+        state.studentRoll = '1242316061';
         state.titleSpacing = 2.0;
       }
     } catch (e) {
       console.warn('LocalStorage unavailable or corrupt', e);
       state.studentName = 'SΛNΛM';
-      state.studentRoll = '24030115470053';
+      state.studentRoll = '1242316061';
       state.titleSpacing = 2.0;
     }
   }
@@ -802,7 +802,7 @@
           state.studentName = 'SΛNΛM';
           state.studentClass = 'BCA III';
           state.studentSem = '5th';
-          state.studentRoll = '24030115470053';
+          state.studentRoll = '1242316061';
           state.customLogoUrl = null;
           state.titleSpacing = 2.0;
           state.detailsSpacing = 2.05;
