@@ -129,7 +129,7 @@
     try {
       // Purge all old legacy cache keys
       ['mmc_front_page_user', 'mmc_front_page_user_v2', 'mmc_front_page_user_v3'].forEach(k => {
-        try { localStorage.removeItem(k); } catch (e) {}
+        try { localStorage.removeItem(k); } catch (e) { }
       });
 
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -788,7 +788,7 @@
             ['mmc_front_page_user', 'mmc_front_page_user_v2', 'mmc_front_page_user_v3', STORAGE_KEY].forEach(k => {
               localStorage.removeItem(k);
             });
-          } catch (e) {}
+          } catch (e) { }
 
           // 2. Reset full state to pristine defaults
           selectPreset('data-mining');
