@@ -6,7 +6,14 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Local Dev Artifacts
+# Local Dev & Test Artifacts
 test_*.png
 test_*.html
 render_test*.py
+*.py
+!assets/
+
+# Ignore Root Downloaded PDFs & PNGs
+/*.pdf
+/*.png
+!assets/logo.png
