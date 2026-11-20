@@ -11,7 +11,13 @@
   <meta name="description"
     content="Generate 100% exact, print-ready college practical file front pages for Data Mining, Computer Graphics, Linux and more.">
   <link rel="icon" href="assets/logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=3.4">
+  <link rel="stylesheet" href="style.css?v=4.0">
+  <script>
+    (function() {
+      const theme = localStorage.getItem('snm_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -25,6 +31,12 @@
           <h1>Practical Front Page Generator</h1>
           <span class="subtitle">Made By S.N.M.</span>
         </div>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" title="Switch Theme (Light / Dark)">
+          <span class="theme-toggle-icon">🌙</span>
+          <span class="theme-toggle-label">Dark</span>
+        </button>
       </div>
     </header>
 
@@ -353,10 +365,10 @@
   </div>
 
   <!-- Scripts -->
-  <script src="logo-data.js?v=3.4"></script>
+  <script src="logo-data.js?v=4.0"></script>
   <script src="libs/jspdf.umd.min.js"></script>
   <script src="libs/html2canvas.min.js"></script>
-  <script src="app.js?v=3.4"></script>
+  <script src="app.js?v=4.0"></script>
 </body>
 
 </html>

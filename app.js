@@ -116,12 +116,50 @@
 
   // --- Initialize Application ---
   function init() {
+    initTheme();
     loadSavedSettings();
     setZoom(0.58);
     bindEvents();
     syncInputsWithState();
     renderAll();
     setTimeout(applyInitialZoom, 100);
+  }
+
+  // --- Theme Management (Light theme default) ---
+  function initTheme() {
+    const savedTheme = localStorage.getItem('snm_theme') || 'light';
+    applyTheme(savedTheme);
+
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+    }
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('snm_theme', theme);
+    } catch (e) { }
+
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+      const icon = themeToggleBtn.querySelector('.theme-toggle-icon');
+      const label = themeToggleBtn.querySelector('.theme-toggle-label');
+      if (theme === 'dark') {
+        if (icon) icon.textContent = '☀️';
+        if (label) label.textContent = 'Light';
+        themeToggleBtn.title = 'Switch to Light Mode';
+      } else {
+        if (icon) icon.textContent = '🌙';
+        if (label) label.textContent = 'Dark';
+        themeToggleBtn.title = 'Switch to Dark Mode';
+      }
+    }
   }
 
   // --- LocalStorage persistence ---
@@ -141,7 +179,7 @@
           state.studentName = 'SΛNΛM';
         }
 
-        if (parsed.studentRoll && parsed.studentRoll !== '24030115470043' && parsed.studentRoll !== '24030115470053') {
+        if (parsed.studentRoll && parsed.studentRoll !== '1242316061' && parsed.studentRoll !== '1242316061') {
           state.studentRoll = parsed.studentRoll;
         } else {
           state.studentRoll = '1242316061';
